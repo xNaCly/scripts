@@ -1,0 +1,3 @@
+# RichPresence
+
+Optimised for Windows
