@@ -10,6 +10,7 @@
    - gets the current focused window and adds it to your RichPresence in Discord <br>
    - updates every 15 seconds<br>
    - uses assets providen by me, will be changed later to more neutral pictures
+   - logs all activity in a `log` file, which can be found in the same directory as `rpc.py`
 
 
 
