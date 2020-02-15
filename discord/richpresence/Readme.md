@@ -13,5 +13,7 @@
 
 
 
+In Discord:
+https://cdn.discordapp.com/attachments/568847750226116609/678276493297844264/profile.PNG
 
 # Optimised for Windows
