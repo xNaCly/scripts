@@ -1,7 +1,10 @@
 # RichPresence
 
 ### What you need to do:
-   - nothing besides installing python or downloading the latest [release](https://raw.githubusercontent.com/xNaCly/scripts/master/discord/richpresence/rpc.py)
+   - installing python and downloading the latest [release](https://raw.githubusercontent.com/xNaCly/scripts/master/discord/richpresence/rpc.py)
+   - installing following packages:<br>
+               `pypresence`
+               `win32gui`
 
 ### How it works:
    - gets the currently focused window and adds it to your RichPresence in Discord <br>
