@@ -1,5 +1,7 @@
 # RichPresence for Discord
 
+## Creates a Discord RichPresence for you
+
 ### What you need to do:
    - install python and download the latest [release](https://raw.githubusercontent.com/xNaCly/scripts/master/discord/richpresence/rpc.py)
    - install following packages:<br>
