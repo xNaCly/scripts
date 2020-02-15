@@ -1,12 +1,12 @@
 # RichPresence
 
 ### What you need to do:
-   basically nothing
+   nothing besides installing python or downloading the latest release
 
 ### How it works:
-   gets the currently focused window and adds it to your RichPresence in Discord.
-   updates every 15 seconds
-   uses assets providen by me, will be changed later to more neutral pictures
+   - gets the currently focused window and adds it to your RichPresence in Discord <br>
+   - updates every 15 seconds<br>
+   - uses assets providen by me, will be changed later to more neutral pictures
 
 
 
