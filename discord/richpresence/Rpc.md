@@ -1,7 +1,7 @@
 # RichPresence
 
 ### What you need to do:
-   nothing besides installing python or downloading the latest release
+   - nothing besides installing python or downloading the latest release
 
 ### How it works:
    - gets the currently focused window and adds it to your RichPresence in Discord <br>
