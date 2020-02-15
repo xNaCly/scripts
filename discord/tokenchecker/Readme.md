@@ -7,7 +7,7 @@
   - will ask you for a Token
   - will send a request to the discord api
   - will print out the response as a JSON-object:
-  ```
+  ```JSON
   {
     "id": "678261196507578371",
     "username": "xnacly",
