@@ -6,8 +6,8 @@
 ### How it works:
   - will ask you for a Token
   - will send a request to the discord api
-  - will print out the result as a json object:
-  {
+  - will print out the response as a json object:
+  `{
     "id": "678261196507578371",
     "username": "xnacly",
     "avatar": null,
@@ -18,4 +18,4 @@
     "mfa_enabled": false,
     "phone": null,
     "flags": 0
-  }
+  }`
