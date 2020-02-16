@@ -9,4 +9,4 @@ all scripts are `OS` independent if not stated differently
 For private usage.
 
 
-docs 50% done
+- docs 50% done
