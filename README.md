@@ -7,3 +7,6 @@ a collection of usefull scripts.
 all scripts are `OS` independent if not stated differently
 <br>
 For private usage.
+
+
+docs 50% done
