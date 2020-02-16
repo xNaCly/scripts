@@ -4,7 +4,7 @@
 Capita consist of 3 commands a user can access:
   - key:
   ```
-  generates key and stores it in a key.CAPITA file
+    generates key and stores it in a key.CAPITA file
   ```
   - encrypt:
   - decrypt:
