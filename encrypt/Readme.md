@@ -2,9 +2,7 @@
 ## Encrypts & Decrpyts files can also create encryptionkeys
 ### Usage:
 Capita consist of 3 commands a user can access:
-  - key: <br>
-    `generates key and stores it in a key.CAPITA file`
-    -
+  - key:
   - encrypt:
   - decrypt:
 
