@@ -1,6 +1,6 @@
 """
 >---	Simple dsb-script	---<
-request dsb plans using https://raw.githubusercontent.com/xNaCly/auth/master/config.json
+request dsb plans using https://raw.githubusercontent.com/xNaCly/auth/master/config.json?token=ALMDHGO2KFJA34ARICR7VH26JE7VK
 writes them to a file
 
 """
@@ -35,5 +35,5 @@ def get_plans(usrnme, pw):
         print(rr.status_code)
         salty = str(uuid.uuid4())
         w_fi(salty, date, str(rr.content))
-auth("https://raw.githubusercontent.com/xNaCly/auth/master/config.json")
+auth("https://raw.githubusercontent.com/xNaCly/auth/master/config.json?token=ALMDHGO2KFJA34ARICR7VH26JE7VK")
 get_plans(b, c)
