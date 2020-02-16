@@ -1,5 +1,7 @@
 # Capita
 ## Encrypts & Decrpyts files can also create encryptionkeys
+### Requires `cryptography` 
+
 ### Usage:
 Capita consist of 3 commands a user can access:
   - `$ key`:
