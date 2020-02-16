@@ -3,7 +3,6 @@ from pypresence import Presence
 from win32gui import GetWindowText, GetForegroundWindow
 from time import sleep as s
 import time
-import json
 def log(process):
 	date = time.asctime(time.localtime(time.time()))
 	f = open("log", "a")
