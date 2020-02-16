@@ -1,4 +1,4 @@
-# scripts
+# Scripts
 ## a collection of usefull scripts.
 
 
