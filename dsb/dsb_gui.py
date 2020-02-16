@@ -15,7 +15,7 @@ def get_plans(usrnme, pw):
         v.set(e["url"])
         Entry(r, textvariable=v, width=250).pack()
         r.geometry("1000x100")
-auth("https://raw.githubusercontent.com/xNaCly/auth/master/config.json")
+auth("https://raw.githubusercontent.com/xNaCly/auth/master/config.json?token=ALMDHGO2KFJA34ARICR7VH26JE7VK")
 def packed():
 	get_plans(b,c)
 r = Tk()
