@@ -2,16 +2,16 @@
 ## Encrypts & Decrpyts files can also create encryptionkeys
 ### Usage:
 Capita consist of 3 commands a user can access:
-  - key:
+  - `key`:
   ```
-    generates key and stores it in a key.CAPITA file
+      generates key and stores it in a key.CAPITA file
   ```
-  - encrypt:
+  - `encrypt`:
     ```
       1. => type in your key generated with the key command
       2. => type in your filename with the ending to encrypt it
     ```
-  - decrypt:
+  - `decrypt`:
     ```
       1. => type in your key generated with the key command
       2. => type in your filename with the ending to decrypt it
