@@ -18,4 +18,4 @@ Capita consist of 3 commands a user can access:
     ```
 # Optimised for Windows
 
-[example]()
+[example](https://github.com/xNaCly/scripts/blob/master/encrypt/Example.md)
