@@ -12,4 +12,4 @@
 - all scripts are `OS` independent if not stated differently
   <br>
 - For private usage.
-- docs `75%[==>_]` done
+- docs `0%[==>₇₅ ]100%` done
