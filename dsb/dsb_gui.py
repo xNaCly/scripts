@@ -6,7 +6,7 @@ def auth(url):
     r = requests.get(url)
     a = json.loads(r.content)
     global b, c
-    b, c = a["username"], a["password"]
+    b, c = a["ab"], a["cd"]
 def get_plans(usrnme, pw):
     dsb = pydsb.PyDSB(usrnme, pw)
     d = dsb.get_plans()
@@ -15,7 +15,7 @@ def get_plans(usrnme, pw):
         v.set(e["url"])
         Entry(r, textvariable=v, width=250).pack()
         r.geometry("1000x100")
-auth("https://raw.githubusercontent.com/xNaCly/auth/master/config.json?token=ALMDHGO2KFJA34ARICR7VH26JE7VK")
+auth("https://raw.githubusercontent.com/xnacly1/auth/master/noauth")
 def packed():
 	get_plans(b,c)
 r = Tk()
