@@ -1,5 +1,5 @@
 # Tokenchecker for Discord
-## Checks if a token is valid and if so returns a JSON-object containing information about the tokenuser
+## Checks if a token is valid and if so returns a JSON-object containing information about the token's user
 ### What you need to do:
   - installing python
   
