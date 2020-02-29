@@ -20,3 +20,6 @@
     "phone": null,
     "flags": 0
   }
+  ```
+### What is a token?
+  - why even use this if you dont know? anyways [here.](https://discordapp.com/developers/docs/topics/oauth2#bots) & (here v2)[https://discordapp.com/developers/docs/topics/oauth2#bots]
