@@ -16,8 +16,7 @@ def rerun():
 
 
 def name_to_uudi(username):
-    burl = "https://api.mojang.com/users/profiles/minecraft/{}".format(
-        username)
+    burl = "https://api.mojang.com/users/profiles/minecraft/{}".format(username)
     r = requests.get(burl)
     if r.status_code == 200:
         r_json = json.loads(r.content)
