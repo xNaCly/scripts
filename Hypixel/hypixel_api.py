@@ -4,6 +4,8 @@
 # first and last login
 # social medias
 
+import requests
+>>>>>>> 1127c24a838e358f1a557b3f582a224bd1c8d136
 import json
 import requests
 import colorama
@@ -13,15 +15,12 @@ from config import base_url as url
 from colorama import Fore, Back, Style
 colorama.init()
 
-
 def rerun():
     s("cls")
     start()
 
-
 def name_to_uudi(username):
-    burl = "https://api.mojang.com/users/profiles/minecraft/{}".format(
-        username)
+    burl = "https://api.mojang.com/users/profiles/minecraft/{}".format(username)
     r = requests.get(burl)
     if r.status_code == 200:
         r_json = json.loads(r.content)
@@ -37,12 +36,10 @@ def name_to_uudi(username):
         input("continue: ")
         rerun()
 
-
 def hypixel_main_request(uuid, key, url):
     url = url + f"skyblock/profile?key={key}&profile={uuid}"
     r = requests.get(url)
     a = json.loads(r.text)
-
 
 def start():
     name = input("Username: ")
@@ -51,6 +48,5 @@ def start():
         hypixel_main_request(uuid, key, url)
     else:
         return rerun()
-
-
+    
 start()
