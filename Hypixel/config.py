@@ -1,2 +1,2 @@
-api_key = "843e066d-52ba-410d-8b19-c4a64626ea22"
+api_key = "06479227-0062-415b-a3a6-4db7cc0790f8"
 base_url = "https://api.hypixel.net/"
