@@ -5,7 +5,6 @@
 # social medias
 
 import requests
->>>>>>> 1127c24a838e358f1a557b3f582a224bd1c8d136
 import json
 import requests
 import colorama
