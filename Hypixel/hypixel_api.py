@@ -3,17 +3,13 @@
 # rank
 # first and last login
 # social medias
-
-
 import requests
 import json
 from config import api_key as key
 from config import base_url as url
 
-
 def rerun():
     start()
-
 
 def name_to_uudi(username):
     burl = "https://api.mojang.com/users/profiles/minecraft/{}".format(username)
@@ -23,7 +19,6 @@ def name_to_uudi(username):
         return r_json["id"]
     else:
         print("There was a Problem, either wrong 'Username' or no internet connection")
-
 
 def hypixel_main_request(uuid, key, url):
     # url = url + f"player?key={key}&uuid={uuid}"
@@ -35,7 +30,6 @@ def hypixel_main_request(uuid, key, url):
     # profile id in player.stats.skyblock
     # player stats in skyblock.members.{uuid} ✅
 
-
 def start():
     name = input("Username: ")
     if name:
@@ -43,6 +37,5 @@ def start():
         hypixel_main_request(uuid, key, url)
     else:
         return rerun()
-
-
+    
 start()
