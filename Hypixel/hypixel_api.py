@@ -52,9 +52,12 @@ def hypixel_main_request(uuid, key, url):
     url = url + f"skyblock/profile?key={key}&profile={uuid}"
     r = requests.get(url)
     a = json.loads(r.text)
-    # for stat in a["profile"]["members"][uuid]["stats"]:
     for stat in a["profile"]["members"][uuid]["stats"]:
-        print(stat + ": " + str(a["profile"]["members"][uuid]["stats"][stat]))
+        try:
+            print(stat + ": " + Fore.GREEN +
+                  str(a["profile"]["members"][uuid]["stats"][stat]) + Style.RESET_ALL)
+        except:
+            pass
 
 
 def start():
