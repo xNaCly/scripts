@@ -30,7 +30,7 @@ def name_to_uudi(username):
         s("cls")
         print("Username " + Fore.GREEN +
               f"{username}" + Style.RESET_ALL + " found connected with")
-        print(Fore.GREEN + f"{uuid}" + Style.RESET_ALL)
+        print(Fore.GREEN + f"{uuid}\n" + Style.RESET_ALL)
         return uuid
     else:
         print(Fore.RED + "There was a Problem, either wrong 'Username' or no internet connection" +
@@ -52,12 +52,26 @@ def hypixel_main_request(uuid, key, url):
     url = url + f"skyblock/profile?key={key}&profile={uuid}"
     r = requests.get(url)
     a = json.loads(r.text)
-    for stat in a["profile"]["members"][uuid]["stats"]:
-        try:
-            print(stat + ": " + Fore.GREEN +
-                  str(a["profile"]["members"][uuid]["stats"][stat]) + Style.RESET_ALL)
-        except:
-            pass
+
+    def printy(des, content):
+        contenter = a["profile"]["members"][uuid][content]
+        print(des + ": " + Fore.GREEN + str(contenter) + Style.RESET_ALL)
+    printy("Fairy Souls", "fairy_souls_collected")
+    printy("Total Bosses", "death_count")
+    print("\nPets:")
+    for pet in a["profile"]["members"][uuid]["pets"]:
+        if pet["tier"] == "COMMON":
+            Raretiyy = Fore.WHITE
+        if pet["tier"] == "UNCOMMON":
+            Raretiyy = Fore.GREEN
+        if pet["tier"] == "RARE":
+            Raretiyy = Fore.BLUE
+        if pet["tier"] == "EPIC":
+            Raretiyy = '\033[0;95m'
+        print("Name: " + Fore.GREEN + str(pet["type"]).replace("_", " ") + Style.RESET_ALL + "\nxp: " + Fore.GREEN + str(
+            pet["exp"]) + Style.RESET_ALL)
+        print("Rarity: ", Raretiyy, pet["tier"] + Style.RESET_ALL + "\n")
+    # printy()
 
 
 def start():
