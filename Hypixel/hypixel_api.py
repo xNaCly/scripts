@@ -52,6 +52,9 @@ def hypixel_main_request(uuid, key, url):
     url = url + f"skyblock/profile?key={key}&profile={uuid}"
     r = requests.get(url)
     a = json.loads(r.text)
+    # for stat in a["profile"]["members"][uuid]["stats"]:
+    for stat in a["profile"]["members"][uuid]["stats"]:
+        print(stat + ": " + str(a["profile"]["members"][uuid]["stats"][stat]))
 
 
 def start():
@@ -59,7 +62,7 @@ def start():
     if name:
         uuid = name_to_uudi(name)
         hypixel_main_request(uuid, key, url)
-        uuid_to_name(uuid)
+        # uuid_to_name(uuid)
     else:
         return rerun()
 
