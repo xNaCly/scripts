@@ -5,6 +5,8 @@
  - several [scripts](https://github.com/xNaCly/scripts/tree/master/Discord) regarding [Discord](https://discordapp.com/company)
  - two [scripts](https://github.com/xNaCly/scripts/tree/master/DSBmobile) to get plans from [DSB](https://digitales-schwarzes-brett.de/)
  - Text formatting [scripts](https://github.com/xNaCly/scripts/tree/master/Text%20Formatting)
+ - Hypixel Skyblock Stats [script](https://github.com/xNaCly/scripts/tree/master/Hypixel) 
+ - Minecraft Server Control [script](https://github.com/xNaCly/scripts/tree/master/Minecraft)
 
 ## General Info:
 
