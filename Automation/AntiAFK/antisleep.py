@@ -15,7 +15,7 @@ def main():
 
 x = 0
 while True:
-	s(3)
+	s(120)
 	x += 1
 	print(f"Moving for the: {x}'s Time'")
 	main()
