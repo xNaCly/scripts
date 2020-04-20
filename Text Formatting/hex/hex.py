@@ -1,5 +1,4 @@
 from textwrap import wrap
-import subprocess
 file = input("Filename: ")
 f = open(f"{file}", "r")
 txt = f.read().upper()
