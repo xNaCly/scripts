@@ -25,7 +25,7 @@ def show_logs():
 	headers = {'Authorization':k}
 	re = requests.get(base_url + "/logs", headers=headers)
 	logs = re.text
-	with open("logs","a") as f:
+	with open("log","w") as f:
 		f.write("\n\n" + logs)
 	if re.status_code == 200:
 		kek["text"] = "Success"
