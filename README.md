@@ -1,6 +1,7 @@
 # Scripts
 ## a collection of usefull scripts.
 ## Containing:
+ - virus info [script](https://github.com/xNaCly/scripts/tree/master/Covid19)
  - automation [scripts](https://github.com/xNaCly/scripts/tree/master/Automation)
  - file-encryption [script](https://github.com/xNaCly/scripts/tree/master/Encrypt)
  - several [scripts](https://github.com/xNaCly/scripts/tree/master/Discord) regarding [Discord](https://discordapp.com/company)
