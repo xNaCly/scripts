@@ -12,7 +12,6 @@ response_object = """{
 	"Date":"2020-04-20T17:48:21Z"
 	}"""
 r = requests.get("https://api.covid19api.com/summary")
-# rr = json.loads(response_object)
 rr = json.loads(str(r.text))
 print("\n")
 for x in rr['Global']:
