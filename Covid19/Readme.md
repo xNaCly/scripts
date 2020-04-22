@@ -1,4 +1,5 @@
 Return Object from [API](https://api.covid19api.com/summary)
+[API-docs](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#9739c95f-ef1d-489b-97a9-0a6dfe2f74d8)
 
 ```
 {
