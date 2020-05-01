@@ -21,4 +21,4 @@
 
 ### Customization:
 - added in the future
-# Optimised for Windows
+# Only works for Windows
