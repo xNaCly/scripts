@@ -31,7 +31,7 @@ if prc_name == "":
 else:
     while True:
         penis = prc_name
-        if len(penis) > 128:
+        if len(penis) >= 125:
             penis = "error - task string too long"
         RPC.update(state=f"{penis}", start=timer, large_image="uwu",
                    large_text=f"{penis}", small_image="uwu", small_text="made by xNaCly#6370")
