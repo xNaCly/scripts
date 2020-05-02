@@ -3,7 +3,7 @@
 ## Creates a Discord RichPresence for you
 
 ### What you need to do:
-   - install python and download the latest [release](https://raw.githubusercontent.com/xNaCly/scripts/master/discord/richpresence/rpc.py)
+   - install python and download the latest rpc.py [release](https://raw.githubusercontent.com/xNaCly/scripts/master/discord/richpresence/rpc.py)
    - install following packages:<br>
                `pypresence`
                `win32gui`
@@ -21,4 +21,4 @@
 
 ### Customization:
 - added in the future
-# Optimised for Windows
+# Only works for Windows
