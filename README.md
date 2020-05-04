@@ -15,4 +15,4 @@
 - `written and tested on win10_64x using python3.8`<br>
 - all scripts are `OS` independent if not stated differently
   <br>
-- docs arent done
+- docs arent done and knowing me, that will not change
