@@ -2,9 +2,11 @@ import requests
 import json
 import os
 
+
+
 def errorLogger(error):
-	with open("log", "w") as f:
-		f.write(f"\n{error}")
+	with open("log", "a") as f:
+		f.write(f"\n\n{error}")
 
 
 def requestStats():
@@ -12,7 +14,7 @@ def requestStats():
 		r = requests.get("https://api.covid19api.com/summary")
 		rr = json.loads(str(r.text))
 		return rr
-	except e:
+	except Exception as e:
 		print("! While trying to establish a internet-connection, \nan error occured, \ntry disabling your firewall, or adding this program to the whitelist !")
 		errorLogger(e)
 		exit()
@@ -42,7 +44,7 @@ def displayOneCountry(Country):
 def main():
 	print("""
 +- COVID19 - info - script -+
-			+-xnacly-+	
++-xnacly-+	
 arguments: global, allCountries, oneCountry
 	\n\n
 	""")
