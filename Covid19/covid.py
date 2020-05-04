@@ -2,25 +2,19 @@ import requests
 import json
 import os
 
-"""{
-	"Global":{
-		"NewConfirmed":83608,
-		"TotalConfirmed":2400051,
-		"NewDeaths":5534,
-		"TotalDeaths":165012,
-		"NewRecovered":31584,
-		"TotalRecovered":623259
-		},
-	"Date":"2020-04-20T17:48:21Z"
-	}"""
+def errorLogger(error):
+	with open("log", "w") as f:
+		f.write(f"\n{error}")
+
 
 def requestStats():
 	try:
 		r = requests.get("https://api.covid19api.com/summary")
 		rr = json.loads(str(r.text))
 		return rr
-	except:
+	except e:
 		print("! While trying to establish a internet-connection, \nan error occured, \ntry disabling your firewall, or adding this program to the whitelist !")
+		errorLogger(e)
 		exit()
 
 RESPONSE = requestStats()
