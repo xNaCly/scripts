@@ -22,19 +22,33 @@ def requestStats():
 RESPONSE = requestStats()
 
 def globalStats():
+	try:
+		os.system("cls")
+	except:
+		os.system("clear")
+
 	rr = RESPONSE
 	for x in rr['Global']:
 		print(f"{x}: {rr['Global'][x]}")
 	print(rr['Date'])
 
 def displayAllCoutries():
+	try:
+		os.system("cls")
+	except:
+		os.system("clear")
+
 	rr = RESPONSE
 	for x in rr['Countries']:
 		print(f"{x['Country']} | {x['CountryCode']}")
 
 def displayOneCountry(Country):
+	try:
+		os.system("cls")
+	except:
+		os.system("clear")
+
 	rr = RESPONSE
-	
 	for x in rr['Countries']:
 		if x['Country'].lower() == Country.lower(): #== Country or x['Slug'] == Country or x['CountryCode'] == Country:
 			for y in x:
@@ -62,7 +76,10 @@ arguments: global, allCountries, oneCountry
 
 def fallbackFun():
 	input("\nPress any Button to get back... ")
-	os.system("cls")
+	try:
+		os.system("cls")
+	except:
+		os.system("clear")
 	main()
 
 main()
