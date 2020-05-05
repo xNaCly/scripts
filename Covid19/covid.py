@@ -1,6 +1,17 @@
 import requests
 import json
 import os
+from sys import platform
+
+
+clearstring = ""
+if platform == "linux" or platform == "linux2":
+    clearstring = "clear"
+elif platform == "darwin":
+	clearstring = "clear"
+elif platform == "win32":
+	clearstring = "cls"
+
 
 
 
@@ -22,64 +33,59 @@ def requestStats():
 RESPONSE = requestStats()
 
 def globalStats():
-	try:
-		os.system("cls")
-	except:
-		os.system("clear")
-
+	os.system(clearstring)
 	rr = RESPONSE
 	for x in rr['Global']:
 		print(f"{x}: {rr['Global'][x]}")
 	print(rr['Date'])
 
 def displayAllCoutries():
-	try:
-		os.system("cls")
-	except:
-		os.system("clear")
-
+	os.system(clearstring)
 	rr = RESPONSE
 	for x in rr['Countries']:
 		print(f"{x['Country']} | {x['CountryCode']}")
 
 def displayOneCountry(Country):
-	try:
-		os.system("cls")
-	except:
-		os.system("clear")
-
+	os.system(clearstring)
 	rr = RESPONSE
 	for x in rr['Countries']:
-		if x['Country'].lower() == Country.lower(): #== Country or x['Slug'] == Country or x['CountryCode'] == Country:
+		if x['Country'].lower() == Country.lower(): 
 			for y in x:
 				print(f"{y}: {x[y]}")
 			break
-
+		if x['Slug'].lower() == Country.lower():
+			for y in x:
+				print(f"{y}: {x[y]}")
+			break
+		if x['CountryCode'].lower() == Country.lower():
+			for y in x:
+				print(f"{y}: {x[y]}")
+			break
 def main():
 	print("""
 +- COVID19 - info - script -+
 +-xnacly-+	
-arguments: global, allCountries, oneCountry
+arguments: 
+1: global
+2: allCountries
+3: oneCountry
 	\n\n
 	""")
 	cmd = input()
-	if cmd == "global":
+	if cmd == "1":
 		globalStats()
 		fallbackFun()
-	elif cmd == "allCountries":
+	elif cmd == "2":
 		displayAllCoutries()
 		fallbackFun()	
-	elif cmd == "oneCountry":
+	elif cmd == "3":
 		coun = input("Country: ")
 		displayOneCountry(coun)
 		fallbackFun()
 
 def fallbackFun():
 	input("\nPress any Button to get back... ")
-	try:
-		os.system("cls")
-	except:
-		os.system("clear")
+	os.system(clearstring)
 	main()
 
 main()
