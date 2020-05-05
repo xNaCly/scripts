@@ -5,12 +5,10 @@ from sys import platform
 
 
 clearstring = ""
-if platform == "linux" or platform == "linux2":
-    clearstring = "clear"
-elif platform == "darwin":
-	clearstring = "clear"
-elif platform == "win32":
+if platform == "win32":
 	clearstring = "cls"
+else:
+	clearstring = "clear"
 
 
 
