@@ -13,8 +13,6 @@ elif platform == "win32":
 	clearstring = "cls"
 
 
-
-
 def errorLogger(error):
 	with open("log", "a") as f:
 		f.write(f"\n\n{error}")
