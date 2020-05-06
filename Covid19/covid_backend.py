@@ -71,24 +71,37 @@ def displayOneCountry(Country):
 		if x['Country'].lower() == Country.lower(): 
 			for y in x:
 				c += f"{y}: {x[y]}\n"
+			c += f"Deaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			break
 		if x['Slug'].lower() == Country.lower():
 			for y in x:
 				c += f"{y}: {x[y]}\n"
+			c += f"Deaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			break
 		if x['CountryCode'].lower() == Country.lower():
 			for y in x:
 				c += f"{y}: {x[y]}\n"
+			c += f"Deaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			break
-
 	return c
 
+# c += f"{(x['TotalDeaths']*100)/rr['Global']['TotalDeaths']}"
 
-def displayLeaderBoards(Type):
-	c = ""
-	if Type == "deaths":
-		pass
-	elif Type == "recovered":
-		pass
-	elif Type == "cases":
-		pass
+
+# def displayLeaderBoards(Type):
+
+# 	c = ""
+# 	if Type == "deaths":
+# 		# get all deaths
+# 		# sort by highest
+# 		# display top five: CountryName | DeathAmount
+# 		for x in rr['Countries']:
+
+# 		return c
+# 	elif Type == "recovered":
+# 		return c		
+# 	elif Type == "cases":
+# 		return c

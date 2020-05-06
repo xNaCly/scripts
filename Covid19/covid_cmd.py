@@ -3,15 +3,11 @@ import json
 import os
 from sys import platform
 from covid_backend import displayAllCountries, globalStats, displayOneCountry
-
-
 clearstring = ""
 if platform == "win32":
 	clearstring = "cls"
 else:
 	clearstring = "clear"
-
-
 def main():
 	print("""
 +- COVID19 - info - script -+
@@ -33,10 +29,8 @@ arguments:
 		coun = input("Country: ")
 		print(displayOneCountry(coun))
 		fallbackFun()
-
 def fallbackFun():
 	input("\nPress any Button to get back... ")
 	os.system(clearstring)
 	main()
-
 main()
