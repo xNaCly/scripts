@@ -82,3 +82,13 @@ def displayOneCountry(Country):
 			break
 
 	return c
+
+
+def displayLeaderBoards(Type):
+	c = ""
+	if Type == "deaths":
+		pass
+	elif Type == "recovered":
+		pass
+	elif Type == "cases":
+		pass
