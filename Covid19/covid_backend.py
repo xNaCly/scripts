@@ -1,6 +1,9 @@
 import requests
 import json
 
+# make leaderboards
+# format numbers better: (rn: 1000000) --> (after: 1.000.000)
+
 def errorLogger(error):
 	with open("log", "a") as f:
 		f.write(f"\n\n{error}")
@@ -17,6 +20,7 @@ def requestStats():
 
 RESPONSE = requestStats()
 
+
 def globalStats():
 	
 	# NewConfirmed: 90841
@@ -29,9 +33,9 @@ def globalStats():
 
 	rr = RESPONSE
 	c = ""
+	x = 0
 	for x in rr['Global']:
 		c += f"{x}: {rr['Global'][x]}\n"
-	c += f"{rr['Date']}"
 	return c
 
 
@@ -71,24 +75,22 @@ def displayOneCountry(Country):
 		if x['Country'].lower() == Country.lower(): 
 			for y in x:
 				c += f"{y}: {x[y]}\n"
-			c += f"Deaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			break
 		if x['Slug'].lower() == Country.lower():
 			for y in x:
 				c += f"{y}: {x[y]}\n"
-			c += f"Deaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			break
 		if x['CountryCode'].lower() == Country.lower():
 			for y in x:
 				c += f"{y}: {x[y]}\n"
-			c += f"Deaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			break
 	return c
-
-# c += f"{(x['TotalDeaths']*100)/rr['Global']['TotalDeaths']}"
 
 
 # def displayLeaderBoards(Type):

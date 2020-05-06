@@ -2,8 +2,7 @@ config.py
 __pycache__/
 Hypixel/response_firsttime.json
 Hypixel/response_firsttime
-Hypixel/config.py
 Private
 logs
 log
-
+configer.py
