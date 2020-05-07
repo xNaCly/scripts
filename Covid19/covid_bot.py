@@ -66,7 +66,7 @@ async def on_message(message):
 		args = message.content.split(" ")
 		stringer = displayOneCountry(args[1])
 		if stringer == "Country not found - try using `c!countries` for a list of all available countries":
-			args = ["", ""]
+			args = ["", "Not Found :'("]
 		embed = discord.Embed(title="COVID19 - Bot", description="New and reliable Stats", color=0xff0000)
 		embed.add_field(name=f"{args[1]}-Stats:", value=stringer)
 		embed.set_footer(text=f"{client.user.name}#{client.user.discriminator} by xnacly", icon_url=client.user.avatar_url)
