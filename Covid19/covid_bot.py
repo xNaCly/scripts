@@ -54,13 +54,20 @@ async def on_message(message):
 	# country [code/slug/name]
 	if message.content.startswith("c!country"):
 		args = message.content.split(" ")
-		stringer = displayOneCountry(args[1])
-		if stringer == "Country not found - try using `c!countries` for a list of all available countries":
-			args = ["", "Not Found :'("]
-		embed = discord.Embed(title="COVID19 - Bot", description="New and reliable Stats", color=0xff0000)
-		embed.add_field(name=f"{args[1]}-Stats:", value=stringer)
-		embed.set_footer(text=f"{client.user.name}#{client.user.discriminator} by xnacly#6370", icon_url=client.user.avatar_url)
-		await message.channel.send(embed=embed)
+		if len(args) == 2:
+			stringer = displayOneCountry(args[1])
+			if stringer == "Country not found - try using `c!countries` for a list of all available countries":
+				args = ["", "Not Found :'("]
+			embed = discord.Embed(title="COVID19 - Bot", description="New and reliable Stats", color=0xff0000)
+			embed.add_field(name=f"{args[1]}-Stats:", value=stringer)
+			embed.set_footer(text=f"{client.user.name}#{client.user.discriminator} by xnacly#6370", icon_url=client.user.avatar_url)
+			await message.channel.send(embed=embed)
+		else: 
+			notDoneYetEmbed = discord.Embed(title="COVID19 - Bot", description="New and reliable Stats", color=0xff0000)
+			notDoneYetEmbed.add_field(name="Error: ", value="Please specify something, but not more than 1 thing :)")
+			notDoneYetEmbed.set_footer(text="{}#{} by xnacly#6370".format(client.user.name, client.user.discriminator), icon_url=client.user.avatar_url)
+			await message.channel.send(embed=notDoneYetEmbed)
+		
 
 	# add
 	if message.content.startswith("c!add") or message.content.startswith("c!invite"):
