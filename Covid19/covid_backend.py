@@ -34,8 +34,11 @@ def globalStats():
 	c = ""
 	x = 0
 	for x in rr['Global']:
+		# if x == 'TotalConfirmed':
+		# 	c += f"{x}: {rr['Global'][x]}\n*estimated number is approx. x4 higher*\n"
+		# 	break
 		c += f"{x}: {rr['Global'][x]}\n"
-	c += f"\nGlobalLethalityRate : {round((rr['Global']['TotalDeaths']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+	c += f"\nGlobalLethalityRate : {round((rr['Global']['TotalDeaths']*100)/rr['Global']['TotalConfirmed'], 2)}%\n*not accurate, because there are not tested infected*"
 	return c
 
 
@@ -80,9 +83,9 @@ def displayOneCountry(Country):
 					c += "\n"
 				c += f"{y}: {x[y]}\n"
 			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
-			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
-			c += f"\nRecovered relative to Total: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
-			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}%"
+			c += f"Cases relative to Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered relative to Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}% \n*not accurate, because there are not tested infected*"
 			break
 		if x['Slug'].lower() == Country.lower():
 			for y in x:
@@ -92,9 +95,9 @@ def displayOneCountry(Country):
 					c += "\n"
 				c += f"{y}: {x[y]}\n"
 			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
-			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
-			c += f"\nRecovered relative to Total: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
-			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}%"
+			c += f"Cases relative to Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered relative to Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}% \n*not accurate, because there are not tested infected*"
 			break
 		if x['CountryCode'].lower() == Country.lower():
 			for y in x:
@@ -104,12 +107,12 @@ def displayOneCountry(Country):
 					c += "\n"
 				c += f"{y}: {x[y]}\n"
 			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
-			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
-			c += f"\nRecovered relative to Total: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
-			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}%"
+			c += f"Cases relative to Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered relative to Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}% \n*not accurate, because there are not tested infected*"
 			break
 	if c == "":
-		c = "Country not found - try using `c!countries` for a list of all available countriess"
+		c = "Country not found - try using `c!countries` for a list of all available countries"
 	return c
 
 
