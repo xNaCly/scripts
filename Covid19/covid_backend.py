@@ -1,5 +1,6 @@
 import requests
 import json
+from time import sleep as s
 
 # make leaderboards
 # format numbers better: (rn: 1000000) --> (after: 1.000.000)
@@ -8,15 +9,22 @@ def errorLogger(error):
 	with open("log", "a") as f:
 		f.write(f"\n\n{error}")
 
-def requestStats():
+
+def theRequest():
 	try:
 		r = requests.get("https://api.covid19api.com/summary")
-		rr = json.loads(str(r.text))
-		return rr
+		returner = json.loads(str(r.text))
+		return returner
 	except Exception as e:
 		print("! While trying to establish a internet-connection, \nan error occured, \ntry disabling your firewall, or adding this program to the whitelist !")
 		errorLogger(e)
-		exit()
+
+
+def requestStats():
+	while True:
+		response = theRequest()
+		return response
+		s(300)
 
 RESPONSE = requestStats()
 
@@ -34,9 +42,6 @@ def globalStats():
 	c = ""
 	x = 0
 	for x in rr['Global']:
-		# if x == 'TotalConfirmed':
-		# 	c += f"{x}: {rr['Global'][x]}\n*estimated number is approx. x4 higher*\n"
-		# 	break
 		c += f"{x}: {rr['Global'][x]}\n"
 	c += f"\nGlobalLethalityRate : {round((rr['Global']['TotalDeaths']*100)/rr['Global']['TotalConfirmed'], 2)}%\n*not accurate, because there are not tested infectious cases*"
 	return c
