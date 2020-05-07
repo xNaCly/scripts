@@ -57,13 +57,18 @@ async def on_message(message):
 	notDoneYetEmbed = discord.Embed(title="COVID19 - Bot", description="New and reliable Stats", color=0xff0000)
 	notDoneYetEmbed.add_field(name="Error: ", value="this command isnt finished yet")
 	notDoneYetEmbed.set_footer(text="{}#{} by xnacly".format(client.user.name, client.user.discriminator), icon_url=client.user.avatar_url)
+	# await message.channel.send(embed=notDoneYetEmbed)
 
 	if message.content.startswith("c!leaderboards"):
 		await message.channel.send(embed=notDoneYetEmbed)
 
 	if message.content.startswith("c!country"):
-		await message.channel.send(embed=notDoneYetEmbed)
-
+		args = message.content.split(" ")
+		stringer = displayOneCountry(args[1])
+		embed = discord.Embed(title="COVID19 - Bot", description="New and reliable Stats", color=0xff0000)
+		embed.add_field(name=f"{args[1]}-Stats:", value=stringer)
+		embed.set_footer(text=f"{client.user.name}#{client.user.discriminator} by xnacly", icon_url=client.user.avatar_url)
+		await message.channel.send(embed=embed)
 	
 
 client.run(TOKEN)

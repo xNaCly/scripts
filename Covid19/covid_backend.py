@@ -29,13 +29,13 @@ def globalStats():
 	# TotalDeaths: 257093
 	# NewRecovered: 84832
 	# TotalRecovered: 1195874
-	# 2020-05-06T16:21:13Z
 
 	rr = RESPONSE
 	c = ""
 	x = 0
 	for x in rr['Global']:
 		c += f"{x}: {rr['Global'][x]}\n"
+	c += f"\nGlobalLethalityRate : {round((rr['Global']['TotalDeaths']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 	return c
 
 
@@ -74,22 +74,42 @@ def displayOneCountry(Country):
 	for x in rr['Countries']:
 		if x['Country'].lower() == Country.lower(): 
 			for y in x:
+				if y == 'Date':
+					break
+				if y == 'NewConfirmed':
+					c += "\n"
 				c += f"{y}: {x[y]}\n"
 			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered relative to Total: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}%"
 			break
 		if x['Slug'].lower() == Country.lower():
 			for y in x:
+				if y == 'Date':
+					break
+				if y == 'NewConfirmed':
+					c += "\n"
 				c += f"{y}: {x[y]}\n"
 			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered relative to Total: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}%"
 			break
 		if x['CountryCode'].lower() == Country.lower():
 			for y in x:
+				if y == 'Date':
+					break
+				if y == 'NewConfirmed':
+					c += "\n"
 				c += f"{y}: {x[y]}\n"
 			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases relative to Total: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered relative to Total: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}%"
 			break
+	if c == "":
+		c = "Country not found - try using `c!countries` for a list of all available countriess"
 	return c
 
 
