@@ -10,6 +10,36 @@ def errorLogger(error):
 		f.write(f"\n\n{error}")
 
 
+def makeReadable(number):
+	if type(number) != int:
+		return number
+	numberstring = str(number)
+	newNumberstring = ""
+	for x in numberstring:
+		if len(numberstring) == 7:
+			newNumberstring += x
+			if len(newNumberstring) == 1:
+				newNumberstring += "."
+			if len(newNumberstring) == 5:
+				newNumberstring += "."
+			
+		if len(numberstring) == 6:
+			newNumberstring += x
+			if len(newNumberstring) == 3:
+				newNumberstring += "."
+
+		if len(numberstring) == 5:
+			newNumberstring += x
+			if len(newNumberstring) == 2:
+				newNumberstring += "."
+
+		if len(numberstring) == 4:
+			newNumberstring += x
+			if len(newNumberstring) == 1:
+				newNumberstring += "."
+	return newNumberstring
+
+
 def theRequest():
 	try:
 		r = requests.get("https://api.covid19api.com/summary")
@@ -42,7 +72,14 @@ def globalStats():
 	c = ""
 	x = 0
 	for x in rr['Global']:
-		c += f"{x}: {rr['Global'][x]}\n"
+		if x == 'NewConfirmed':
+			continue
+		if x == 'NewDeaths':
+			continue
+		if x == 'NewRecovered':
+			continue
+		c += f"{x}: {makeReadable(rr['Global'][x])}\n"
+
 	c += f"\nGlobalLethalityRate : {round((rr['Global']['TotalDeaths']*100)/rr['Global']['TotalConfirmed'], 2)}%\n*not accurate, because there are not tested infectious cases*"
 	return c
 
@@ -80,40 +117,58 @@ def displayOneCountry(Country):
 	c = ""
 
 	for x in rr['Countries']:
-		if x['Country'].lower() == Country.lower(): 
+		if x['Country'].lower() == Country.lower():
 			for y in x:
 				if y == 'Date':
-					break
+					continue
 				if y == 'NewConfirmed':
+					continue
+				if y == 'NewDeaths':
+					continue
+				if y == 'NewRecovered':
+					continue
+				if y == 'TotalConfirmed':
 					c += "\n"
-				c += f"{y}: {x[y]}\n"
-			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
-			c += f"Cases relative to Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
-			c += f"\nRecovered relative to Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+				c += f"{y}: {makeReadable(x[y])}\n"
+			c += f"\nDeaths from Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"Cases from Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered from Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
 			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}% \n*not accurate, because there are not tested infectious cases*"
 			break
 		if x['Slug'].lower() == Country.lower():
 			for y in x:
 				if y == 'Date':
-					break
+					continue
 				if y == 'NewConfirmed':
+					continue
+				if y == 'NewDeaths':
+					continue
+				if y == 'NewRecovered':
+					continue
+				if y == 'TotalConfirmed':
 					c += "\n"
-				c += f"{y}: {x[y]}\n"
-			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
-			c += f"Cases relative to Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
-			c += f"\nRecovered relative to Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+				c += f"{y}: {makeReadable(x[y])}\n"
+			c += f"\nDeaths from Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"Cases from Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered from Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
 			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}% \n*not accurate, because there are not tested infectious cases*"
 			break
 		if x['CountryCode'].lower() == Country.lower():
 			for y in x:
 				if y == 'Date':
-					break
+					continue
 				if y == 'NewConfirmed':
+					continue
+				if y == 'NewDeaths':
+					continue
+				if y == 'NewRecovered':
+					continue
+				if y == 'TotalConfirmed':
 					c += "\n"
-				c += f"{y}: {x[y]}\n"
-			c += f"\nDeaths relative to Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
-			c += f"Cases relative to Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
-			c += f"\nRecovered relative to Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
+				c += f"{y}: {makeReadable(x[y])}\n"
+			c += f"\nDeaths from Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
+			c += f"Cases from Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
+			c += f"\nRecovered from Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
 			c += f"\nLethality rate in {x['Country']}: {round((x['TotalDeaths']*100)/x['TotalConfirmed'], 2)}% \n*not accurate, because there are not tested infectious cases*"
 			break
 	if c == "":
