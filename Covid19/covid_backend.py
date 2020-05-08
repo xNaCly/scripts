@@ -204,5 +204,5 @@ def displayLeaderboards(Type):
 	for x in topFive:
 		for y in RESPONSE['Countries']:
 			if x == y[typestring]:
-				finalTopFive += f"{y['Country']}: {x}\n"
+				finalTopFive += f"{y['Country']}: {makeReadable(x)}\n"
 	return finalTopFive
