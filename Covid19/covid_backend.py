@@ -175,18 +175,34 @@ def displayOneCountry(Country):
 		c = "Country not found - try using `c!countries` for a list of all available countries"
 	return c
 
+def displayLeaderboards(Type):
+	Type.lower()
+	if Type == "deaths":
+		typestring = "TotalDeaths"
+	elif Type == "cases":
+		typestring = "TotalConfirmed"
+	elif Type == "recovered":
+		typestring = "TotalRecovered"
 
-# def displayLeaderBoards():
+	numberarray = []
+	for x in RESPONSE['Countries']:
+		for y in x:
+			if y == typestring:
+				numberarray.append(x[typestring])
+				break
+	numberarray.sort(reverse=True)
 
-# 	c = ""
-# 	if Type == "deaths":
-# 		# get all deaths
-# 		# sort by highest
-# 		# display top five: CountryName | DeathAmount
-# 		for x in rr['Countries']:
+	y = 0
+	topFive = []
+	for x in numberarray:
+		if y == 5:
+			break
+		topFive.append(x)
+		y = y + 1
 
-# 		return c
-# 	elif Type == "recovered":
-# 		return c		
-# 	elif Type == "cases":
-# 		return c
+	finalTopFive = ""
+	for x in topFive:
+		for y in RESPONSE['Countries']:
+			if x == y[typestring]:
+				finalTopFive += f"{y['Country']}: {x}\n"
+	return finalTopFive

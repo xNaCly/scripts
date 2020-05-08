@@ -1,5 +1,5 @@
 import discord
-from covid_backend import displayAllCountries, globalStats, displayOneCountry
+from covid_backend import displayAllCountries, globalStats, displayOneCountry, displayLeaderboards
 from configer import TOKEN
 
 client = discord.Client()
@@ -97,7 +97,12 @@ async def on_message(message):
 
 
 	if message.content.startswith("c!leaderboards"):
-		await message.channel.send(embed=notDoneYetEmbed)
+		embed = discord.Embed(title="COVID19 - Bot", description="New and reliable Stats", color=0xff0000)
+		embed.add_field(name="Top 5 Cases:", value=displayLeaderboards("cases"), inline=False)
+		embed.add_field(name="Top 5 Recovered:", value=displayLeaderboards("recovered"), inline=False)
+		embed.add_field(name="Top 5 Deaths:", value=displayLeaderboards("deaths"), inline=False)
+		embed.set_footer(text="{}#{} by xnacly#6370".format(client.user.name, client.user.discriminator), icon_url=client.user.avatar_url)
+		await message.channel.send(embed=embed)
 
 
 client.run(TOKEN)
