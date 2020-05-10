@@ -54,7 +54,6 @@ def requestStats():
 	while True:
 		response = theRequest()
 		return response
-		s(300)
 
 RESPONSE = requestStats()
 
