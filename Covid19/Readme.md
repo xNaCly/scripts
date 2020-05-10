@@ -17,7 +17,7 @@ TotalRecovered: 679101
 
 [ReturnObject](https://raw.githubusercontent.com/xNaCly/scripts/master/Covid19/available_countries.txt)
 
-### Return covid_backend.py `[oneCountry] [DE]`:
+### Return covid_backend.py `[oneCountry] [country] | [oneCountry] [DE]`:
 ```
 Country: DE
 Country: Germany
@@ -34,3 +34,5 @@ Date: 2020-05-06T20:24:50Z
 Deaths relative to Global: 2.72%
 Cases relative to Total: 4.56%
 ```
+
+### Return covid_backend.py `[displayLeaderboards] [type] | [displayLeaderboards][deaths]`:
