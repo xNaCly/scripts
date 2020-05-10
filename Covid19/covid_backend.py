@@ -183,6 +183,8 @@ def displayLeaderboards(Type):
 		typestring = "TotalConfirmed"
 	elif Type == "recovered":
 		typestring = "TotalRecovered"
+	else: 
+		typestring = "TotalConfirmed"
 
 	numberarray = []
 	for x in RESPONSE['Countries']:

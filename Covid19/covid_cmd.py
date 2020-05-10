@@ -2,7 +2,7 @@ import requests
 import json
 import os
 from sys import platform
-from covid_backend import displayAllCountries, globalStats, displayOneCountry
+from covid_backend import displayAllCountries, globalStats, displayOneCountry, displayLeaderboards
 clearstring = ""
 if platform == "win32":
 	clearstring = "cls"
@@ -16,6 +16,7 @@ arguments:
 1: global
 2: allCountries
 3: oneCountry
+4: displayLeaderboards
 	\n\n
 	""")
 	cmd = input()
@@ -29,9 +30,9 @@ arguments:
 		coun = input("Country: ")
 		print(displayOneCountry(coun))
 		fallbackFun()
-	elif cmd == "3":
+	elif cmd == "4":
 		coun = input("Leaderboards: ")
-		print(displayOneCountry(coun))
+		print(displayLeaderboards(coun))
 		fallbackFun()
 def fallbackFun():
 	input("\nPress any Button to get back... ")
