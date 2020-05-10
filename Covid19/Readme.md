@@ -7,7 +7,7 @@
 
 ## Important methods:
 
-### covid_backend.py `[global]`:
+### `[global]`:
 ```
 TotalConfirmed: 5.399.508
 TotalDeaths: 362.859
@@ -16,7 +16,7 @@ TotalRecovered: 1.374.979
 GlobalLethalityRate : 6.72%
 *not accurate, because there are not tested infectious cases*
 ```
-### covid_backend.py `[displayAllCountries]`:
+### `[displayAllCountries]`:
 
 [ReturnObject](https://raw.githubusercontent.com/xNaCly/scripts/master/Covid19/available_countries.txt)
 
@@ -43,7 +43,7 @@ Lethality rate in Germany: 4.41%
 *not accurate, because there are not tested infectious cases*
 ```
 
-### covid_backend.py `[displayLeaderboards] [type]`:
+### `[displayLeaderboards] [type]`:
 #### type: [cases, deaths, recovered] 
 -not casesensitive 
 - accepts 3 types
@@ -59,7 +59,7 @@ France: 26.313
 
 ## Less important methods:
 
-### covid_backend.py `[errorLogger] [error]`:
+### `[errorLogger] [error]`:
 - as the name suggests, logs error to `log`-file
 
 ### covid_backend.py `[makeReadable] [number]`:
@@ -72,10 +72,10 @@ France: 26.313
 1000000 --> 1.000.000
 ```
 
-### covid_backend.py `[theRequest]`:
+### `[theRequest]`:
 - makes request to the [api](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#9739c95f-ef1d-489b-97a9-0a6dfe2f74d8)
 - if cant access the api, due to whatever --> throws an [error](https://github.com/xNaCly/scripts/tree/master/Covid19#covid_backendpy-errorlogger-error)
 
-### covid_backend.py `[requestStats]`:
+### `[requestStats]`:
 - everytime a method is called this function runs a new request to the api
 - calls [theRequest](https://github.com/xNaCly/scripts/tree/master/Covid19#covid_backendpy-therequest)
