@@ -1,47 +1,81 @@
+
+
+# Backend [covid_backend.py](https://github.com/xNaCly/scripts/blob/master/Covid19/covid_backend.py):
 [API-docs](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#9739c95f-ef1d-489b-97a9-0a6dfe2f74d8)
+- wrapper for ^ 
+- makes usability in other projects easier
 
-# Backend:
+## Important methods:
 
-### Return covid_backend.py `[global]`:
-
+### `[global]`:
 ```
-NewConfirmed: 81849
-TotalConfirmed: 2519183
-NewDeaths: 6788
-TotalDeaths: 172976
-NewRecovered: 34329
-TotalRecovered: 679101
-2020-04-22T14:28:43Z
+TotalConfirmed: 5.399.508
+TotalDeaths: 362.859
+TotalRecovered: 1.374.979
+
+GlobalLethalityRate : 6.72%
+*not accurate, because there are not tested infectious cases*
 ```
-### Return covid_backend.py `[displayAllCountries]`:
+### `[displayAllCountries]`:
 
 [ReturnObject](https://raw.githubusercontent.com/xNaCly/scripts/master/Covid19/available_countries.txt)
 
-### Return covid_backend.py `[oneCountry] [country] | [oneCountry] [DE]`:
-#### country: [DE, Germany] <br>- not casesensitive <br>- accepts: CountryCode or Country(Name) or country Slug
+### `[oneCountry] [country]`:
+#### country: [DE, Germany] 
+- not casesensitive 
+- accepts: CountryCode or Country(Name) or country Slug
 ```
+[oneCountry] [DE]:
+
 Country: DE
 Country: Germany
 CountryCode: DE
 Slug: germany
-NewConfirmed: 0
-TotalConfirmed: 167007
-NewDeaths: 0
-TotalDeaths: 6993
-NewRecovered: 0
-TotalRecovered: 135100
-Date: 2020-05-06T20:24:50Z
 
-Deaths relative to Global: 2.72%
-Cases relative to Total: 4.56%
+TotalConfirmed: 171.324
+TotalDeaths: 7.549
+TotalRecovered: 143.300
+
+Deaths from Global: 2.08%
+Cases from Global: 3.17%
+Recovered from Global: 10.42%
+Lethality rate in Germany: 4.41%
+*not accurate, because there are not tested infectious cases*
 ```
 
-### Return covid_backend.py `[displayLeaderboards] [type] | [displayLeaderboards] [deaths]`:
-#### type: [cases, deaths, recovered] <br>-not casesensitive <br>- accepts 3 types
+### `[displayLeaderboards] [type]`:
+#### type: [cases, deaths, recovered] 
+-not casesensitive 
+- accepts 3 types
 ```
+[displayLeaderboards] [deaths]
+
 United States of America: 157.537
 United Kingdom: 31.662
 Italy: 30.395
 Spain: 26.478
 France: 26.313
 ```
+
+## Less important methods:
+
+### `[errorLogger] [error]`:
+- as the name suggests, logs error to `log`-file
+
+### [makeReadable] [number]`:
+- converts number to easier readable number
+- if input isnt a number --> returns same var as the input
+```
+1000    --> 1.000
+10000   --> 10.000
+100000  --> 100.000
+1000000 --> 1.000.000
+```
+
+### `[theRequest]`:
+- makes request to the [api](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#9739c95f-ef1d-489b-97a9-0a6dfe2f74d8)
+- if cant access the api, due to whatever --> throws an [error](https://github.com/xNaCly/scripts/tree/master/Covid19#covid_backendpy-errorlogger-error)
+
+### `[requestStats]`:
+- everytime a method is called this function runs a new request to the api
+- calls [theRequest](https://github.com/xNaCly/scripts/tree/master/Covid19#covid_backendpy-therequest)
