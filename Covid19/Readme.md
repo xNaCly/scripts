@@ -15,9 +15,11 @@ GlobalLethalityRate : 6.72%
 
 [ReturnObject](https://raw.githubusercontent.com/xNaCly/scripts/master/Covid19/available_countries.txt)
 
-### Return covid_backend.py `[oneCountry] [country] | [oneCountry] [DE]`:
+### Return covid_backend.py `[oneCountry] [country]`:
 #### country: [DE, Germany] <br>- not casesensitive <br>- accepts: CountryCode or Country(Name) or country Slug
 ```
+[oneCountry] [DE]:
+
 Country: DE
 Country: Germany
 CountryCode: DE
@@ -34,9 +36,11 @@ Lethality rate in Germany: 4.41%
 *not accurate, because there are not tested infectious cases*
 ```
 
-### Return covid_backend.py `[displayLeaderboards] [type] | [displayLeaderboards] [deaths]`:
+### Return covid_backend.py `[displayLeaderboards] [type]`:
 #### type: [cases, deaths, recovered] <br>-not casesensitive <br>- accepts 3 types
 ```
+[displayLeaderboards] [deaths]
+
 United States of America: 157.537
 United Kingdom: 31.662
 Italy: 30.395
