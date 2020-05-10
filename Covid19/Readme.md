@@ -1,7 +1,7 @@
 
 
 # Backend [covid_backend.py](https://github.com/xNaCly/scripts/blob/master/Covid19/covid_backend.py):
-[Example (python)](https://github.com/xNaCly/scripts/blob/master/Covid19/example.py)
+[Example (python)](https://github.com/xNaCly/scripts/blob/master/Covid19/example.py) <br>
 [API-docs](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#9739c95f-ef1d-489b-97a9-0a6dfe2f74d8)
 - wrapper for ^ 
 - makes usability in other projects easier
