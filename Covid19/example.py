@@ -3,26 +3,19 @@ import covid_backend
 # returns global covid19 data
 print(covid_backend.globalStats())
 
-# returns covid19 data for the US
-print(covid_backend.displayOneCountry("US"))
-
-# returns covid19 leaderboards for deaths (top5)
-print(covid_backend.displayLeaderboards("deaths"))
-
-# returns all available countries
-print(covid_backend.displayAllCountries())
-
-
 """
-Returns:
-
 TotalConfirmed: 5.399.508
 TotalDeaths: 362.859
 TotalRecovered: 1.374.979
 
 GlobalLethalityRate : 6.72%
 *not accurate, because there are not tested infectious cases*
+"""
 
+# returns covid19 data for the US
+print(covid_backend.displayOneCountry("US"))
+
+"""
 Country: United States of America
 CountryCode: US
 Slug: united-states
@@ -36,13 +29,23 @@ Cases from Global: 48.46%
 Recovered from Global: 15.46%
 Lethality rate in United States of America: 6.02%
 *not accurate, because there are not tested infectious cases*
+"""
 
+# returns covid19 leaderboards for deaths (top5)
+print(covid_backend.displayLeaderboards("deaths"))
+
+"""
 United States of America: 157.537
 United Kingdom: 31.662
 Italy: 30.395
 Spain: 26.478
 France: 26.313
+"""
 
+# returns all available countries
+print(covid_backend.displayAllCountries())
+
+"""
 Afghanistan | AF
 Albania | AL
 Algeria | DZ
