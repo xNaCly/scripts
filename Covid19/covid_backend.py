@@ -2,9 +2,6 @@ import requests
 import json
 from time import sleep as s
 
-# make leaderboards
-# format numbers better: (rn: 1000000) --> (after: 1.000.000)
-
 def errorLogger(error):
 	with open("log", "a") as f:
 		f.write(f"\n\n{error}")
@@ -40,7 +37,7 @@ def makeReadable(number):
 	return newNumberstring
 
 
-def theRequest():
+def requestStats():
 	try:
 		r = requests.get("https://api.covid19api.com/summary")
 		returner = json.loads(str(r.text))
@@ -48,12 +45,6 @@ def theRequest():
 	except Exception as e:
 		print("! While trying to establish a internet-connection, \nan error occured, \ntry disabling your firewall, or adding this program to the whitelist !")
 		errorLogger(e)
-
-
-def requestStats():
-	while True:
-		response = theRequest()
-		return response
 
 RESPONSE = requestStats()
 
