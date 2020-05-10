@@ -37,7 +37,7 @@ Cases relative to Total: 4.56%
 ```
 
 ### Return covid_backend.py `[displayLeaderboards] [type] | [displayLeaderboards] [deaths]`:
-#### type: [cases, deaths, recovered] <br>-not casesensitive <br>- accepts 3 types)
+#### type: [cases, deaths, recovered] <br>-not casesensitive <br>- accepts 3 types
 ```
 United States of America: 157.537
 United Kingdom: 31.662
