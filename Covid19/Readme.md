@@ -18,7 +18,7 @@ TotalRecovered: 679101
 [ReturnObject](https://raw.githubusercontent.com/xNaCly/scripts/master/Covid19/available_countries.txt)
 
 ### Return covid_backend.py `[oneCountry] [country] | [oneCountry] [DE]`:
-#### country: [DE, Germany] (not casesensitive, accepts: Country Code or Country Name or country Slug
+#### country: [DE, Germany] <br>- not casesensitive <br>- accepts: CountryCode or Country(Name) or country Slug
 ```
 Country: DE
 Country: Germany
@@ -37,7 +37,7 @@ Cases relative to Total: 4.56%
 ```
 
 ### Return covid_backend.py `[displayLeaderboards] [type] | [displayLeaderboards] [deaths]`:
-#### type: [cases, deaths, recovered] (not casesensitive, accepts 3 types)
+#### type: [cases, deaths, recovered] <br>-not casesensitive <br>- accepts 3 types)
 ```
 United States of America: 157.537
 United Kingdom: 31.662
