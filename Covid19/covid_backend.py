@@ -66,7 +66,7 @@ def globalStats():
 		if x == 'NewRecovered':
 			continue
 		c += f"{x}: {makeReadable(rr['Global'][x])}\n"
-	c += f"Currently ill: {makeReadable(rr['Global']['TotalConfirmed'] - (rr['Global']['TotalDeaths'] + rr['Global']['TotalRecovered']))}"
+	c += f"\nCurrently ill: {makeReadable(rr['Global']['TotalConfirmed'] - (rr['Global']['TotalDeaths'] + rr['Global']['TotalRecovered']))} | {round((rr['Global']['TotalConfirmed'] - (rr['Global']['TotalDeaths'] + rr['Global']['TotalRecovered'])) * 100/rr['Global']['TotalConfirmed'])}%\n"
 	c += f"\nGlobalLethalityRate : {round((rr['Global']['TotalDeaths']*100)/rr['Global']['TotalConfirmed'], 2)}%\n*not accurate, because there are not tested infectious cases*"
 	return c
 
@@ -115,7 +115,7 @@ def displayOneCountry(Country):
 				if y == 'TotalConfirmed':
 					c += "\n"
 				c += f"{y}: {makeReadable(x[y])}\n"
-			c += f"Currently ill: {makeReadable(x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered']))}\n"
+			c += f"Currently ill: {makeReadable(x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered']))} | {round((x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered'])) * 100/x['TotalConfirmed'])}%\n"
 			c += f"\nDeaths from Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases from Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			c += f"\nRecovered from Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
@@ -134,7 +134,7 @@ def displayOneCountry(Country):
 				if y == 'TotalConfirmed':
 					c += "\n"
 				c += f"{y}: {makeReadable(x[y])}\n"
-			c += f"Currently ill: {makeReadable(x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered']))}\n"
+			c += f"Currently ill: {makeReadable(x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered']))} | {round((x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered'])) * 100/x['TotalConfirmed'])}%\n"
 			c += f"\nDeaths from Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%\n"
 			c += f"Cases from Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			c += f"\nRecovered from Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
@@ -153,7 +153,7 @@ def displayOneCountry(Country):
 				if y == 'TotalConfirmed':
 					c += "\n"
 				c += f"{y}: {makeReadable(x[y])}\n"
-			c += f"Currently ill: {makeReadable(x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered']))}\n"
+			c += f"Currently ill: {makeReadable(x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered']))} | {round((x['TotalConfirmed'] - (x['TotalDeaths'] + x['TotalRecovered'])) * 100/x['TotalConfirmed'])}%\n"
 			c += f"\nDeaths from Global: {round((x['TotalDeaths']*100)/rr['Global']['TotalDeaths'], 2)}%"
 			c += f"\nCases from Global: {round((x['TotalConfirmed']*100)/rr['Global']['TotalConfirmed'], 2)}%"
 			c += f"\nRecovered from Global: {round((x['TotalRecovered']*100)/rr['Global']['TotalRecovered'], 2)}%"
