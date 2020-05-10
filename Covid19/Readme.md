@@ -3,15 +3,13 @@
 # Backend:
 
 ### Return covid_backend.py `[global]`:
-
 ```
-NewConfirmed: 81849
-TotalConfirmed: 2519183
-NewDeaths: 6788
-TotalDeaths: 172976
-NewRecovered: 34329
-TotalRecovered: 679101
-2020-04-22T14:28:43Z
+TotalConfirmed: 5.399.508
+TotalDeaths: 362.859
+TotalRecovered: 1.374.979
+
+GlobalLethalityRate : 6.72%
+*not accurate, because there are not tested infectious cases*
 ```
 ### Return covid_backend.py `[displayAllCountries]`:
 
@@ -24,16 +22,16 @@ Country: DE
 Country: Germany
 CountryCode: DE
 Slug: germany
-NewConfirmed: 0
-TotalConfirmed: 167007
-NewDeaths: 0
-TotalDeaths: 6993
-NewRecovered: 0
-TotalRecovered: 135100
-Date: 2020-05-06T20:24:50Z
 
-Deaths relative to Global: 2.72%
-Cases relative to Total: 4.56%
+TotalConfirmed: 171.324
+TotalDeaths: 7.549
+TotalRecovered: 143.300
+
+Deaths from Global: 2.08%
+Cases from Global: 3.17%
+Recovered from Global: 10.42%
+Lethality rate in Germany: 4.41%
+*not accurate, because there are not tested infectious cases*
 ```
 
 ### Return covid_backend.py `[displayLeaderboards] [type] | [displayLeaderboards] [deaths]`:
