@@ -17,18 +17,15 @@ def makeReadable(number):
 			if len(newNumberstring) == 1:
 				newNumberstring += "."
 			if len(newNumberstring) == 5:
-				newNumberstring += "."
-			
+				newNumberstring += "."		
 		if len(numberstring) == 6:
 			newNumberstring += x
 			if len(newNumberstring) == 3:
 				newNumberstring += "."
-
 		if len(numberstring) == 5:
 			newNumberstring += x
 			if len(newNumberstring) == 2:
 				newNumberstring += "."
-
 		if len(numberstring) == 4:
 			newNumberstring += x
 			if len(newNumberstring) == 1:
@@ -47,14 +44,6 @@ def requestStats():
 RESPONSE = requestStats()
 
 def globalStats():
-	
-	# NewConfirmed: 90841
-	# TotalConfirmed: 3658565
-	# NewDeaths: 4734
-	# TotalDeaths: 257093
-	# NewRecovered: 84832
-	# TotalRecovered: 1195874
-
 	rr = RESPONSE
 	c = ""
 	x = 0
@@ -71,14 +60,6 @@ def globalStats():
 	return c
 
 def displayAllCountries():
-	
-	# ALA Aland Islands | AX
-	# Afghanistan | AF
-	# Albania | AL
-	# Algeria | DZ
-	# American Samoa | AS
-	# Andorra | AD
-
 	rr = RESPONSE
 	c = ""
 	for x in rr['Countries']:
@@ -86,21 +67,8 @@ def displayAllCountries():
 	return c
 
 def displayOneCountry(Country):
-
-	# Country: United States of America
-	# CountryCode: US
-	# Slug: united-states
-	# NewConfirmed: 0
-	# TotalConfirmed: 1204351
-	# NewDeaths: 0
-	# TotalDeaths: 71064
-	# NewRecovered: 0
-	# TotalRecovered: 189791
-	# Date: 2020-05-06T16:21:13Z
-
 	rr = RESPONSE
 	c = ""
-
 	for x in rr['Countries']:
 		if x['Country'].lower() == Country.lower():
 			for y in x:
@@ -173,7 +141,6 @@ def displayLeaderboards(Type):
 		typestring = "TotalRecovered"
 	else: 
 		typestring = "TotalConfirmed"
-
 	numberarray = []
 	for x in RESPONSE['Countries']:
 		for y in x:
@@ -181,7 +148,6 @@ def displayLeaderboards(Type):
 				numberarray.append(x[typestring])
 				break
 	numberarray.sort(reverse=True)
-
 	y = 0
 	topFive = []
 	for x in numberarray:
@@ -189,7 +155,6 @@ def displayLeaderboards(Type):
 			break
 		topFive.append(x)
 		y = y + 1
-
 	finalTopFive = ""
 	for x in topFive:
 		for y in RESPONSE['Countries']:
