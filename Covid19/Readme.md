@@ -2,7 +2,9 @@
 
 # Backend:
 
-### Return covid_backend.py `[global]`:
+## Important methods:
+
+### covid_backend.py `[global]`:
 ```
 TotalConfirmed: 5.399.508
 TotalDeaths: 362.859
@@ -11,12 +13,14 @@ TotalRecovered: 1.374.979
 GlobalLethalityRate : 6.72%
 *not accurate, because there are not tested infectious cases*
 ```
-### Return covid_backend.py `[displayAllCountries]`:
+### covid_backend.py `[displayAllCountries]`:
 
 [ReturnObject](https://raw.githubusercontent.com/xNaCly/scripts/master/Covid19/available_countries.txt)
 
-### Return covid_backend.py `[oneCountry] [country]`:
-#### country: [DE, Germany] <br>- not casesensitive <br>- accepts: CountryCode or Country(Name) or country Slug
+### covid_backend.py `[oneCountry] [country]`:
+#### country: [DE, Germany] 
+- not casesensitive 
+- accepts: CountryCode or Country(Name) or country Slug
 ```
 [oneCountry] [DE]:
 
@@ -36,8 +40,10 @@ Lethality rate in Germany: 4.41%
 *not accurate, because there are not tested infectious cases*
 ```
 
-### Return covid_backend.py `[displayLeaderboards] [type]`:
-#### type: [cases, deaths, recovered] <br>-not casesensitive <br>- accepts 3 types
+### covid_backend.py `[displayLeaderboards] [type]`:
+#### type: [cases, deaths, recovered] 
+-not casesensitive 
+- accepts 3 types
 ```
 [displayLeaderboards] [deaths]
 
@@ -47,3 +53,20 @@ Italy: 30.395
 Spain: 26.478
 France: 26.313
 ```
+
+## Less important methods:
+
+### covid_backend.py `[errorLogger] [error]`:
+- as the name suggests, logs error to `log`-file
+
+### covid_backend.py `[makeReadable] [number]`:
+- converts number to easier readable number
+- if input isnt a number --> returns same var as the input
+```
+1000    --> 1.000
+10000   --> 10.000
+100000  --> 100.000
+1000000 --> 1.000.000
+```
+
+### covid_backend.py
