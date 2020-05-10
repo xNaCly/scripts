@@ -29,6 +29,10 @@ arguments:
 		coun = input("Country: ")
 		print(displayOneCountry(coun))
 		fallbackFun()
+	elif cmd == "3":
+		coun = input("Leaderboards: ")
+		print(displayOneCountry(coun))
+		fallbackFun()
 def fallbackFun():
 	input("\nPress any Button to get back... ")
 	os.system(clearstring)
