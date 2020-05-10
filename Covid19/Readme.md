@@ -72,3 +72,7 @@ France: 26.313
 ### covid_backend.py `[theRequest]`:
 - makes request to the [api](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#9739c95f-ef1d-489b-97a9-0a6dfe2f74d8)
 - if cant access the api, due to whatever --> throws an [error](https://github.com/xNaCly/scripts/tree/master/Covid19#covid_backendpy-errorlogger-error)
+
+### covid_backend.py `[requestStats]`:
+- everytime a method is called this function runs a new request to the api
+- calls [theRequest](https://github.com/xNaCly/scripts/tree/master/Covid19#covid_backendpy-therequest)
