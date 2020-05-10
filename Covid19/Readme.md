@@ -20,7 +20,7 @@ GlobalLethalityRate : 6.72%
 
 [ReturnObject](https://raw.githubusercontent.com/xNaCly/scripts/master/Covid19/available_countries.txt)
 
-### covid_backend.py `[oneCountry] [country]`:
+### `[oneCountry] [country]`:
 #### country: [DE, Germany] 
 - not casesensitive 
 - accepts: CountryCode or Country(Name) or country Slug
@@ -62,7 +62,7 @@ France: 26.313
 ### `[errorLogger] [error]`:
 - as the name suggests, logs error to `log`-file
 
-### covid_backend.py `[makeReadable] [number]`:
+### [makeReadable] [number]`:
 - converts number to easier readable number
 - if input isnt a number --> returns same var as the input
 ```
