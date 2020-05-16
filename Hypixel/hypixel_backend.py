@@ -101,6 +101,34 @@ def hypixel_main_request(uuid):
 
 
 # user => uuid/name
+
+# return object:
+"""
+{
+  "name": "xnacly",
+  "uuid": "2fdd2a195bf042f18c3c7e784f985a47",
+  "lastsave": "2020-05-16 20:01:48",
+  "members": [
+    "xnacly",
+    "GodlyArtemisYT",
+    "fips1104"
+  ],
+  "balance": "7.598.289",
+  "purse": "",
+  "skills": {
+    "combat": "",
+    "mining": "",
+    "foraging": "",
+    "fishing": "",
+    "farming": "",
+    "alchemy": "",
+    "enchanting": "",
+    "taming": "",
+    "rune": "",
+    "carpentry": ""
+  }
+}
+"""
 def format_object(userIDorName):
     userid = name_to_uudi(userIDorName)
     if userid == False:
