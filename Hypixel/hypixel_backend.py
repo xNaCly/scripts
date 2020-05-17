@@ -14,9 +14,17 @@ from config import base_url as url
 
 def makeReadable(number):
 	number = round(number)
+	print(number)
 	numberstring = str(number)
 	newNumberstring = ""
 	for x in numberstring:
+		"10000000"
+		if len(numberstring) == 8:
+			newNumberstring += x
+			if len(newNumberstring) == 2:
+				newNumberstring += "."
+			if len(newNumberstring) == 6:
+				newNumberstring += "."	
 		if len(numberstring) == 7:
 			newNumberstring += x
 			if len(newNumberstring) == 1:
@@ -39,8 +47,11 @@ def makeReadable(number):
 
 
 def timeStampToDate(timestamp):
-    d = str(datetime.fromtimestamp(round(timestamp/1000)))
-    return d
+	d = str(datetime.fromtimestamp(round(timestamp/1000)))
+	return d
+
+def calcSkillLevel(skill_xp):
+	return 
 
 # username => string
 
@@ -52,18 +63,18 @@ def timeStampToDate(timestamp):
 }
 """
 def name_to_uudi(username):
-    burl = "https://api.mojang.com/users/profiles/minecraft/{}".format(
-        username)
-    r = requests.get(burl)
-    if r.status_code == 200:
-        r_json = json.loads(r.content)
+	burl = "https://api.mojang.com/users/profiles/minecraft/{}".format(
+		username)
+	r = requests.get(burl)
+	if r.status_code == 200:
+		r_json = json.loads(r.content)
 
-        return r_json
+		return r_json
 
-    else:
+	else:
 
-        uuid = False
-        return uuid
+		uuid = False
+		return uuid
 
 # uuid => string/integer
 
@@ -73,18 +84,18 @@ def name_to_uudi(username):
   "id" : "2fdd2a195bf042f18c3c7e784f985a47",
   "name" : "xnacly",
   "properties" : [ {
-    "name" : "textures",
-    "value" : "ewogICJ0aW1lc3RhbXAiIDogMTU4OTY1NDk2MjU0OCwKICAicHJvZmlsZUlkIiA6ICIyZmRkMmExOTViZjA0MmYxOGMzYzdlNzg0Zjk4NWE0NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJ4bmFjbHkiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY0YWM1Y2FjM2RiNDQxYWRkNzJlYjZiOGRlMzg1MWMyY2MxMWVkOWU0MjE3NWY0ZDhmMzhjMjliNGMxNWYwOSIKICAgIH0KICB9Cn0="
+	"name" : "textures",
+	"value" : "ewogICJ0aW1lc3RhbXAiIDogMTU4OTY1NDk2MjU0OCwKICAicHJvZmlsZUlkIiA6ICIyZmRkMmExOTViZjA0MmYxOGMzYzdlNzg0Zjk4NWE0NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJ4bmFjbHkiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY0YWM1Y2FjM2RiNDQxYWRkNzJlYjZiOGRlMzg1MWMyY2MxMWVkOWU0MjE3NWY0ZDhmMzhjMjliNGMxNWYwOSIKICAgIH0KICB9Cn0="
   } ]
 }
 """
 def uuid_to_name(uuid):
-    burl = "https://sessionserver.mojang.com/session/minecraft/profile/{}".format(
-        uuid)
-    r = requests.get(burl)
-    nameobject = json.loads(r.content)
+	burl = "https://sessionserver.mojang.com/session/minecraft/profile/{}".format(
+		uuid)
+	r = requests.get(burl)
+	nameobject = json.loads(r.content)
 
-    return nameobject
+	return nameobject
 
 
 # uuid => string/integer
@@ -94,10 +105,10 @@ def uuid_to_name(uuid):
 
 def hypixel_main_request(uuid):
 
-    r = requests.get(f"{url}skyblock/profile?key={key}&profile={uuid}")
-    skyblockUserObject = json.loads(r.text)
+	r = requests.get(f"{url}skyblock/profile?key={key}&profile={uuid}")
+	skyblockUserObject = json.loads(r.text)
 
-    return skyblockUserObject
+	return skyblockUserObject
 
 
 # user => uuid/name
@@ -109,74 +120,116 @@ def hypixel_main_request(uuid):
   "uuid": "2fdd2a195bf042f18c3c7e784f985a47",
   "lastsave": "2020-05-16 20:01:48",
   "members": [
-    "xnacly",
-    "GodlyArtemisYT",
-    "fips1104"
+	"xnacly",
+	"GodlyArtemisYT",
+	"fips1104"
   ],
   "balance": "7.598.289",
   "purse": "",
   "skills": {
-    "combat": "",
-    "mining": "",
-    "foraging": "",
-    "fishing": "",
-    "farming": "",
-    "alchemy": "",
-    "enchanting": "",
-    "taming": "",
-    "rune": "",
-    "carpentry": ""
+	"combat": "",
+	"mining": "",
+	"foraging": "",
+	"fishing": "",
+	"farming": "",
+	"alchemy": "",
+	"enchanting": "",
+	"taming": "",
+	"rune": "",
+	"carpentry": ""
   }
 }
 """
 def format_object(userIDorName):
-    userid = name_to_uudi(userIDorName)
-    if userid == False:
-        userid = uuid_to_name(userIDorName)
-    
-    user = hypixel_main_request(userid["id"])
+	userid = name_to_uudi(userIDorName)
+	if userid == False:
+		userid = uuid_to_name(userIDorName)
 
-    balance = makeReadable(user["profile"]["banking"]["balance"])
-    purse = makeReadable(user["profile"]["members"][userid["id"]]["coin_purse"])
+	
+	
+	user = hypixel_main_request(userid["id"])
 
+	userr = user["profile"]["members"][userid["id"]]
 
-    memberarray = []
-    for members in user["profile"]["members"]:
-        memberarray.append(members)
-    
-    newMemberArray = []
-    for member in memberarray:
-        userobject = uuid_to_name(member)
-        newMemberArray.append(userobject["name"])
-        
-    memberarray = newMemberArray
-    finalUserObject = {
-        "name": userid["name"],
-        "uuid": userid["id"],
-        "lastsave": timeStampToDate(user["profile"]["members"][userid["id"]]["last_save"]),
-        "members": memberarray,
-        "balance": balance,
-        "purse": purse,
-        "skills":{
-            "combat":"",
-            "mining":"",
-            "foraging":"",
-            "fishing":"",
-            "farming":"",
-            "alchemy":"",
-            "enchanting":"",
-            "taming":"",
-            "rune":"",
-            "carpentry":""
-        }
-    }
-    finalUserObject = str(finalUserObject).replace("\'", "\"")
-    return finalUserObject
+	balance = makeReadable(user["profile"]["banking"]["balance"])
+	purse = makeReadable(userr["coin_purse"])
+
+	skillarray = [userr["experience_skill_mining"], userr["experience_skill_foraging"], userr["experience_skill_combat"], userr["experience_skill_fishing"], userr["experience_skill_farming"], userr["experience_skill_alchemy"], userr["experience_skill_enchanting"], userr["experience_skill_taming"], userr["experience_skill_runecrafting"], userr["experience_skill_carpentry"]]
+	numbery = 0
+	for skill in skillarray:
+		numbery += skill
+
+	# print(numbery, makeReadable(numbery))
+
+	memberarray = []
+	for members in user["profile"]["members"]:
+		memberarray.append(members)
+	
+	newMemberArray = []
+	for member in memberarray:
+		userobject = uuid_to_name(member)
+		newMemberArray.append(userobject["name"])
+		
+	memberarray = newMemberArray
+	finalUserObject = {
+		"name": userid["name"],
+		"uuid": userid["id"],
+		"lastsave": timeStampToDate(user["profile"]["members"][userid["id"]]["last_save"]),
+		"members": memberarray,
+		"balance": balance,
+		"purse": purse,
+		"skills":{
+			"combat": {
+				"combat_xp": makeReadable(userr["experience_skill_combat"]),
+				"combat_lvl":""
+			},
+			"mining": {
+				"mining_xp": makeReadable(userr["experience_skill_mining"]),
+				"mining_lvl":"",
+			},
+			"foraging":{
+				"foraging_xp": makeReadable(userr["experience_skill_foraging"]),
+				"foraging_lvl":"",
+			},
+			"fishing":{
+				"fishing_xp": makeReadable(userr["experience_skill_fishing"]),
+				"fishing_lvl":"",
+			},
+			"farming":{
+				"farming_xp": makeReadable(userr["experience_skill_farming"]),
+				"farming_lvl":"",
+			},
+			"alchemy":{
+				"alchemy_xp": makeReadable(userr["experience_skill_alchemy"]),
+				"alchemy_lvl":"",
+			},
+			"enchanting":{
+				"enchanting_xp": makeReadable(userr["experience_skill_enchanting"]),
+				"enchanting_lvl":"",
+			},
+			"taming":{
+				"taming_xp_lvl": makeReadable(userr["experience_skill_taming"]),
+				"taming_lvl":"",
+			},
+			"runecrafting":{
+				"rune_xp": makeReadable(userr["experience_skill_runecrafting"]),
+				"rune_lvl":"",
+			},
+			"carpentry":{
+				"carpentry_xp": makeReadable(userr["experience_skill_carpentry"]),
+				"carpentry_lvl":""
+			},
+			"average_skill":"",
+			"total_skill_xp":  makeReadable(numbery)
+		}
+	}
+	finalUserObject = str(finalUserObject).replace("\'", "\"")
+	return finalUserObject
 
 
 def testREMOVEAFTERFINISH():
-    final = json.loads(format_object("xnacly"))
-    finall = json.dumps((final), indent=2)
-    print(finall)
+	final = json.loads(format_object("xnacly"))
+	finall = json.dumps((final), indent=2)
+	print(finall)
 
 testREMOVEAFTERFINISH()
