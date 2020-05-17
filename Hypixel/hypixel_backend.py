@@ -18,7 +18,6 @@ def makeReadable(number):
 	numberstring = str(number)
 	newNumberstring = ""
 	for x in numberstring:
-		"10000000"
 		if len(numberstring) == 8:
 			newNumberstring += x
 			if len(newNumberstring) == 2:
@@ -118,25 +117,57 @@ def hypixel_main_request(uuid):
 {
   "name": "xnacly",
   "uuid": "2fdd2a195bf042f18c3c7e784f985a47",
-  "lastsave": "2020-05-16 20:01:48",
+  "lastsave": "2020-05-17 11:13:00",
   "members": [
-	"xnacly",
-	"GodlyArtemisYT",
-	"fips1104"
+    "xnacly",
+    "GodlyArtemisYT",
+    "fips1104"
   ],
-  "balance": "7.598.289",
+  "balance": "8.686.044",
   "purse": "",
   "skills": {
-	"combat": "",
-	"mining": "",
-	"foraging": "",
-	"fishing": "",
-	"farming": "",
-	"alchemy": "",
-	"enchanting": "",
-	"taming": "",
-	"rune": "",
-	"carpentry": ""
+    "combat": {
+      "combat_xp": "2.916.592",
+      "combat_lvl": ""
+    },
+    "mining": {
+      "mining_xp": "2.642.894",
+      "mining_lvl": ""
+    },
+    "foraging": {
+      "foraging_xp": "424.891",
+      "foraging_lvl": ""
+    },
+    "fishing": {
+      "fishing_xp": "3.024.971",
+      "fishing_lvl": ""
+    },
+    "farming": {
+      "farming_xp": "1.529.143",
+      "farming_lvl": ""
+    },
+    "alchemy": {
+      "alchemy_xp": "1.018.929",
+      "alchemy_lvl": ""
+    },
+    "enchanting": {
+      "enchanting_xp": "243.211",
+      "enchanting_lvl": ""
+    },
+    "taming": {
+      "taming_xp_lvl": "347.595",
+      "taming_lvl": ""
+    },
+    "runecrafting": {
+      "rune_xp": "51.125",
+      "rune_lvl": ""
+    },
+    "carpentry": {
+      "carpentry_xp": "648.920",
+      "carpentry_lvl": ""
+    },
+    "average_skill": "",
+    "total_skill_xp": "12.848.270"
   }
 }
 """
@@ -158,8 +189,6 @@ def format_object(userIDorName):
 	numbery = 0
 	for skill in skillarray:
 		numbery += skill
-
-	# print(numbery, makeReadable(numbery))
 
 	memberarray = []
 	for members in user["profile"]["members"]:
@@ -228,7 +257,7 @@ def format_object(userIDorName):
 
 
 def testREMOVEAFTERFINISH():
-	final = json.loads(format_object("xnacly"))
+	final = json.loads(format_object("akinsoft"))
 	finall = json.dumps((final), indent=2)
 	print(finall)
 
