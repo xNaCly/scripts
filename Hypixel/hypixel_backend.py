@@ -257,7 +257,7 @@ def format_object(userIDorName):
 
 
 def testREMOVEAFTERFINISH():
-	final = json.loads(format_object("akinsoft"))
+	final = json.loads(format_object("fips1104"))
 	finall = json.dumps((final), indent=2)
 	print(finall)
 
