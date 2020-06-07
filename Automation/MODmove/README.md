@@ -1,3 +1,3 @@
 # MODmove.py
 
-- moves minecraftmods (files ending with ".jar") to the forgemod path
+- moves minecraft mods (files ending with ".jar") to the forge mod path
