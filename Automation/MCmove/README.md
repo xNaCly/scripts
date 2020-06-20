@@ -1,3 +1,3 @@
 # MODmove.py
 
-- moves minecraft mods (files ending with ".jar") to the forge mod path
+- moves minecraft mods & resourcepacks (files ending with ".jar"/".zip") to the forge mod/resourcepack path
