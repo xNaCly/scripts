@@ -10,7 +10,7 @@ path = f"C:\\Users\\{user}\\AppData\\Roaming\\.minecraft"
 # get current working dir
 oldpath = os.getcwd() 
 
-print(f"start moving files from:\n{oldpath}\nto\n{path}\n\n")
+print(f"start moving files from:\n{oldpath}\nto\n{path}\n")
 # iterate trough all files in oldpath
 for file in os.listdir(): 
 	# split files into array --> test.jar => ["test", "jar"]
@@ -20,11 +20,11 @@ for file in os.listdir():
 	if y[len(y)-1] == "jar":
 		# move file from oldpath to modpath
 		shutil.move(f"{oldpath}\\{file}", f"{path}\\mods\\{file}")
-		print(f"\nmoved {file}")
+		print(f"moved {file}")
 	
 	if y[len(y)-1] == "zip":
 		# move file from oldpath to txpath
 		shutil.move(f"{oldpath}\\{file}", f"{path}\\resourcepacks\\{file}")
-		print(f"\nmoved {file}")
+		print(f"moved {file}")
 
 print("finished moving")
