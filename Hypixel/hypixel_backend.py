@@ -14,7 +14,6 @@ from config import base_url as url
 
 def makeReadable(number):
 	number = round(number)
-	print(number)
 	numberstring = str(number)
 	newNumberstring = ""
 	for x in numberstring:
@@ -172,93 +171,96 @@ def hypixel_main_request(uuid):
 }
 """
 def format_object(userIDorName):
-	userid = name_to_uudi(userIDorName)
-	if userid == False:
-		userid = uuid_to_name(userIDorName)
+	try:
+		userid = name_to_uudi(userIDorName)
+		if userid == False:
+			userid = uuid_to_name(userIDorName)
 
-	
-	
-	user = hypixel_main_request(userid["id"])
-
-	userr = user["profile"]["members"][userid["id"]]
-
-	balance = makeReadable(user["profile"]["banking"]["balance"])
-	purse = makeReadable(userr["coin_purse"])
-
-	skillarray = [userr["experience_skill_mining"], userr["experience_skill_foraging"], userr["experience_skill_combat"], userr["experience_skill_fishing"], userr["experience_skill_farming"], userr["experience_skill_alchemy"], userr["experience_skill_enchanting"], userr["experience_skill_taming"], userr["experience_skill_runecrafting"], userr["experience_skill_carpentry"]]
-	numbery = 0
-	for skill in skillarray:
-		numbery += skill
-
-	memberarray = []
-	for members in user["profile"]["members"]:
-		memberarray.append(members)
-	
-	newMemberArray = []
-	for member in memberarray:
-		userobject = uuid_to_name(member)
-		newMemberArray.append(userobject["name"])
 		
-	memberarray = newMemberArray
-	finalUserObject = {
-		"name": userid["name"],
-		"uuid": userid["id"],
-		"lastsave": timeStampToDate(user["profile"]["members"][userid["id"]]["last_save"]),
-		"members": memberarray,
-		"balance": balance,
-		"purse": purse,
-		"skills":{
-			"combat": {
-				"combat_xp": makeReadable(userr["experience_skill_combat"]),
-				"combat_lvl":""
-			},
-			"mining": {
-				"mining_xp": makeReadable(userr["experience_skill_mining"]),
-				"mining_lvl":"",
-			},
-			"foraging":{
-				"foraging_xp": makeReadable(userr["experience_skill_foraging"]),
-				"foraging_lvl":"",
-			},
-			"fishing":{
-				"fishing_xp": makeReadable(userr["experience_skill_fishing"]),
-				"fishing_lvl":"",
-			},
-			"farming":{
-				"farming_xp": makeReadable(userr["experience_skill_farming"]),
-				"farming_lvl":"",
-			},
-			"alchemy":{
-				"alchemy_xp": makeReadable(userr["experience_skill_alchemy"]),
-				"alchemy_lvl":"",
-			},
-			"enchanting":{
-				"enchanting_xp": makeReadable(userr["experience_skill_enchanting"]),
-				"enchanting_lvl":"",
-			},
-			"taming":{
-				"taming_xp_lvl": makeReadable(userr["experience_skill_taming"]),
-				"taming_lvl":"",
-			},
-			"runecrafting":{
-				"rune_xp": makeReadable(userr["experience_skill_runecrafting"]),
-				"rune_lvl":"",
-			},
-			"carpentry":{
-				"carpentry_xp": makeReadable(userr["experience_skill_carpentry"]),
-				"carpentry_lvl":""
-			},
-			"average_skill":"",
-			"total_skill_xp":  makeReadable(numbery)
+		
+		user = hypixel_main_request(userid["id"])
+
+		userr = user["profile"]["members"][userid["id"]]
+
+		balance = makeReadable(user["profile"]["banking"]["balance"])
+		purse = makeReadable(userr["coin_purse"])
+
+		skillarray = [userr["experience_skill_mining"], userr["experience_skill_foraging"], userr["experience_skill_combat"], userr["experience_skill_fishing"], userr["experience_skill_farming"], userr["experience_skill_alchemy"], userr["experience_skill_enchanting"], userr["experience_skill_taming"], userr["experience_skill_runecrafting"], userr["experience_skill_carpentry"]]
+		numbery = 0
+		for skill in skillarray:
+			numbery += skill
+
+		memberarray = []
+		for members in user["profile"]["members"]:
+			memberarray.append(members)
+		
+		newMemberArray = []
+		for member in memberarray:
+			userobject = uuid_to_name(member)
+			newMemberArray.append(userobject["name"])
+			
+		memberarray = newMemberArray
+		finalUserObject = {
+			"name": userid["name"],
+			"uuid": userid["id"],
+			"lastsave": timeStampToDate(user["profile"]["members"][userid["id"]]["last_save"]),
+			"members": memberarray,
+			"balance": balance,
+			"purse": purse,
+			"skills":{
+				"combat": {
+					"combat_xp": makeReadable(userr["experience_skill_combat"]),
+					"combat_lvl":""
+				},
+				"mining": {
+					"mining_xp": makeReadable(userr["experience_skill_mining"]),
+					"mining_lvl":"",
+				},
+				"foraging":{
+					"foraging_xp": makeReadable(userr["experience_skill_foraging"]),
+					"foraging_lvl":"",
+				},
+				"fishing":{
+					"fishing_xp": makeReadable(userr["experience_skill_fishing"]),
+					"fishing_lvl":"",
+				},
+				"farming":{
+					"farming_xp": makeReadable(userr["experience_skill_farming"]),
+					"farming_lvl":"",
+				},
+				"alchemy":{
+					"alchemy_xp": makeReadable(userr["experience_skill_alchemy"]),
+					"alchemy_lvl":"",
+				},
+				"enchanting":{
+					"enchanting_xp": makeReadable(userr["experience_skill_enchanting"]),
+					"enchanting_lvl":"",
+				},
+				"taming":{
+					"taming_xp_lvl": makeReadable(userr["experience_skill_taming"]),
+					"taming_lvl":"",
+				},
+				"runecrafting":{
+					"rune_xp": makeReadable(userr["experience_skill_runecrafting"]),
+					"rune_lvl":"",
+				},
+				"carpentry":{
+					"carpentry_xp": makeReadable(userr["experience_skill_carpentry"]),
+					"carpentry_lvl":""
+				},
+				"average_skill":"",
+				"total_skill_xp":  makeReadable(numbery)
+			}
 		}
-	}
-	finalUserObject = str(finalUserObject).replace("\'", "\"")
+		finalUserObject = str(finalUserObject).replace("\'", "\"")
+	except Exception as ಠ_ಠ:
+		raise Exception("Api disabled | Details: ", ಠ_ಠ)
 	return finalUserObject
 
 
 def testREMOVEAFTERFINISH():
-	final = json.loads(format_object("fips1104"))
-	finall = json.dumps((final), indent=2)
+	final = format_object("xnacly")
+	finall = json.dumps(json.loads(final), indent=2)
 	print(finall)
 
 testREMOVEAFTERFINISH()
