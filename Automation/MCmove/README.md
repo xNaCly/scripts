@@ -4,4 +4,6 @@
 
 
 - Example: 
-https://cdn.discordapp.com/attachments/568847750226116609/724002315811422288/unknown.png
+
+<p><img src="https://cdn.discordapp.com/attachments/568847750226116609/724002315811422288/unknown.png" alt="feedback" title="Example Feedback" /></p>
+
