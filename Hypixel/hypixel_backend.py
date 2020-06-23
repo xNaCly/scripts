@@ -253,8 +253,8 @@ def format_object(userIDorName):
 			}
 		}
 		finalUserObject = str(finalUserObject).replace("\'", "\"")
-	except Exception as ಠ_ಠ:
-		raise Exception("Api disabled | Details: ", ಠ_ಠ)
+	except Exception as e:
+		raise Exception("Api disabled | Details: ", e)
 	return finalUserObject
 
 
