@@ -1,8 +1,13 @@
+# remove after dsb-Desktop app is finished
+self/
+
 config.py
+temp.json
+configer.py
+config.json
 __pycache__/
 Hypixel/response_firsttime.json
 Hypixel/response_firsttime
 Private
 logs
 log
-configer.py
