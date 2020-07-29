@@ -1,3 +1,7 @@
+# Discontinued - Package broke
+
+
+
 # RichPresence for Discord
 
 ## Creates a Discord RichPresence for you
