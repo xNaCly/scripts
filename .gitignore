@@ -17,3 +17,6 @@ log
 # dont include private scripts
 Jugendwort
 Private
+
+# dont include passwords or other cred
+generated
